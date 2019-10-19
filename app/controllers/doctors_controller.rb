@@ -7,7 +7,7 @@ class DoctorsController < ApplicationController
 
     def show
         doctor = Doctor.find(params[:id])
-        render json: doctor
+        render json: doctor, include: '**'
     end
 
 end

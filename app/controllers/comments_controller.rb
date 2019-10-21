@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
 
+    def index
+        comments = Comment.all
+        render json: comments
+    end 
+
     def create
         comment = Comment.new(content: params[:content], doctor_id: params[:doctor_id], author: params[:author])
         if comment.save
-            render json: comment
+            render json: comment 
         end
     end
 
@@ -18,7 +23,8 @@ class CommentsController < ApplicationController
     def destroy
         comment = Comment.find(params[:id])
         comment.destroy
-        render json: {}
+        comments = Comment.all
+        render json: comments
     end
     
 end

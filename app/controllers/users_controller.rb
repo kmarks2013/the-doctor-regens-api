@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
 
+    def index
+        users= User.all
+        render json: users
+    end
+
     def show
-        user = User.find(params[:id])
-        render json: user
+        user_id = params[:id]
+        if logged_in_user_id == user_id.to_i
+            user = User.find(params[:id])
+            render json: user
+        else
+            render json: {error: ['sorry this page is unavailable']}, status: unauthorized
+        end
     end 
 
     def create
         user = User.new(user_params)
-        if user.valid?
+        if user.save
             render json: authentication_json(user.id)
         else
             render json: {errors: user.errors.full_messages}

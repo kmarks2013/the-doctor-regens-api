@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_221226) do
     t.string "image"
     t.string "bio"
     t.string "wikilink"
+    t.integer "regenindex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

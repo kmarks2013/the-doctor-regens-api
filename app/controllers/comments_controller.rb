@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
     end 
 
     def create
-        comment = Comment.new(content: params[:content], doctor_id: params[:doctor_id], user_id: params[:user_id])
+        comment = Comment.new(comment_params)
+        
         if comment.save
             render json: comment 
         end
@@ -14,7 +15,7 @@ class CommentsController < ApplicationController
 
     def update
         comment = Comment.find(params[:id])
-        if comment.update(content: params[:content], doctor_id: params[:doctor_id], user_id: params[:user_id])
+        if comment.update(comment_params)
             render json: comment
         end
     end
@@ -25,6 +26,12 @@ class CommentsController < ApplicationController
         comment.destroy
         comments = Comment.all
         render json: comments
+    end
+
+    private
+
+    def comment_params
+        params.permit(:content, :doctor_id, :user_id)
     end
 
 end

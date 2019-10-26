@@ -5,6 +5,7 @@ class CreateDoctors < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :bio
       t.string :wikilink
+      t.integer :regenindex
 
       t.timestamps
     end

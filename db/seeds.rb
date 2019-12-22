@@ -11,7 +11,7 @@ fifth = Doctor.create(name:'The Fifth Doctor', image:'fifth-doctor', bio:'Youthf
 
 sixth = Doctor.create(name:'The Sixth Doctor', image:'sixth-doctor', bio:'Bumptious, melodramatic, and above all stubborn, the Sixth Doctor instantly believed himself superior to almost anyone he encountered.', wikilink:'https://tardis.fandom.com/wiki/Sixth_Doctor', regenindex: 6)
 
-seventh = Doctor.create(name:'The Seventh Doctor', image:'seventh-doctor', bio:"Originally a man with the demeanour of an eccentric, light-hearted buffoon, the Seventh Doctor darkened into a mysterious, cunning manipulator to combat Fenric's return", regenindex: 7)
+seventh = Doctor.create(name:'The Seventh Doctor', image:'seventh-doctor', bio:"Originally a man with the demeanour of an eccentric, light-hearted buffoon, the Seventh Doctor darkened into a mysterious, cunning manipulator to combat Fenric's return", wikilink:'https://tardis.fandom.com/wiki/Seventh_Doctor', regenindex: 7)
 
 eight = Doctor.create(name:'The Eighth Doctor', image:'eighth-doctor', bio:"Leading a life of great temporal complexity, the Eighth Doctor was so frequently involved in time paradoxes and parallel universes that it was impossible to know with certainty how the major epochs of his existence fitted together.", wikilink:'https://tardis.fandom.com/wiki/Eighth_Doctor', regenindex: 8)
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_221226) do
+ActiveRecord::Schema.define(version: 2020_01_17_204500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2019_10_21_221226) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "companions", force: :cascade do |t|
+    t.bigint "doctor_id", null: false
+    t.string "name"
+    t.string "bio"
+    t.string "image"
+    t.string "link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_companions_on_doctor_id"
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -33,6 +44,18 @@ ActiveRecord::Schema.define(version: 2019_10_21_221226) do
     t.integer "regenindex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "tardis"
+  end
+
+  create_table "sonic_screw_drivers", force: :cascade do |t|
+    t.bigint "doctor_id", null: false
+    t.string "name"
+    t.string "image"
+    t.string "description"
+    t.string "link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_sonic_screw_drivers_on_doctor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +67,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_221226) do
 
   add_foreign_key "comments", "doctors"
   add_foreign_key "comments", "users"
+  add_foreign_key "companions", "doctors"
+  add_foreign_key "sonic_screw_drivers", "doctors"
 end

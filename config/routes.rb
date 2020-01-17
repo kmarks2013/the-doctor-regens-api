@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :sonic_screw_drivers
   resources :users
   
   resources :comments

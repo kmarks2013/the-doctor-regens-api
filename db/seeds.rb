@@ -34,3 +34,5 @@ comment1 = Comment.create(content: 'this is an example comment about the 12th do
 comment1 = Comment.create(content: 'I was not a huge fan of this doctor at first but he grew on me!.', doctor: twelfth, user: kmarks2013)
 comment1 = Comment.create(content: 'this is an example comment about the 13th doctor.', doctor: thriteenth, user: svp)
 comment1 = Comment.create(content: 'i still need to watch the new season!', doctor: thriteenth, user: svp)
+
+console.log("The Doctor is in.")

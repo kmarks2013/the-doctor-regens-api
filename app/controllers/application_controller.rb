@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
     end
 
     def hmac_secret
-        SECRET_KEY_BASE
+        "s13t9roafhbnDMXaadfhbr4rtarzf"
     end
 
 end
